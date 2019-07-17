@@ -1,1 +1,0 @@
-# piro11-Django
