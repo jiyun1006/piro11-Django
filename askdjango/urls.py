@@ -21,7 +21,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
-#     blog의 urls를 포함시킨다 라는 뜻
+    path('dojo/', include('dojo.urls')),
+#     blog, dojo의 urls를 포함시킨다 라는 뜻
 
 ]
 
