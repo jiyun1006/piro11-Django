@@ -39,4 +39,4 @@ class PostList3View3(object):
 
 
 class ExcelDownloadView(TemplateView):
-    pass 
+    pass
