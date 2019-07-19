@@ -2,7 +2,7 @@
 from django.db import models
 import re
 from django.forms import ValidationError
-
+from django.conf import settings
 
 
 
@@ -35,6 +35,7 @@ class Post(models.Model):
 #     auto_now는 저장될 때 마다 기록 갱신
     tag_set = models.ManyToManyField('Tag', blank =True)
     # relation 지정할때는 관련 클래스를 지정 그러나 이번엔 문자열로 쓴다.
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
     class Meta:
         ordering = ['-id']
 
