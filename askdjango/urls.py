@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('dojo/', include('dojo.urls')),
-
+    path('accounts/',include('accounts.urls')),
 #     blog, dojo의 urls를 포함시킨다 라는 뜻
 
 ]
