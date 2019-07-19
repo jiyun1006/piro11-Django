@@ -14,6 +14,13 @@ def lnglat_validator(value):
 
 
 class Post(models.Model):
+    STATUS_CHOICES = (
+        ('d', 'Draft'),
+        ('p','Published'),
+        ('w', 'Withdrawn'),
+    )
+
+
     author = models.CharField(max_length=20)
     title = models.CharField(max_length=100,
                               verbose_name='제목', help_text='포스팅 제목을 입력해주세요.') # 길이제한이 있는 문자열
@@ -23,6 +30,7 @@ class Post(models.Model):
     lnglat = models.CharField(blank = True ,max_length =50, help_text = '경도/위도 포맷으로 입력',validators=[lnglat_validator])
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 #     auto_now_add 는 저장될 때 그때의 시각을 기록
 #     auto_now는 저장될 때 마다 기록 갱신
 
