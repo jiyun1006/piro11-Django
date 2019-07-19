@@ -14,7 +14,8 @@ def lnglat_validator(value):
 
 
 class Post(models.Model):
-    name = models.CharField(max_length=100,
+    author = models.CharField(max_length=20)
+    title = models.CharField(max_length=100,
                               verbose_name='제목', help_text='포스팅 제목을 입력해주세요.') # 길이제한이 있는 문자열
     # verbose_name 은 title에 쓰면 title의 이름을 바꾼다.(언어 설정에 상관없이 이름으로 보여진다.)
     content = models.TextField(verbose_name='내용') # 길이제한이 없는 문자열
