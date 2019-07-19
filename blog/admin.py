@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from .models import Post, Comment
+from .models import Post, Comment, Tag
 
 
 
@@ -34,6 +34,9 @@ class PostAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display=['name']
 
 
 # class ResourceAdmin(admin,ModelAdmin):

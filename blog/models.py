@@ -33,6 +33,8 @@ class Post(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 #     auto_now_add 는 저장될 때 그때의 시각을 기록
 #     auto_now는 저장될 때 마다 기록 갱신
+    tag_set = models.ManyToManyField('Tag')
+    # relation 지정할때는 관련 클래스를 지정 그러나 이번엔 문자열로 쓴다.
     class Meta:
         ordering = ['-id']
 
@@ -49,5 +51,12 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
+class Tag(models.Model):
+    name = models.CharField(max_length = 50, unique=True)
+    def __str__(self):
+        return self.name
 
 
+# def __str__(self):
+#   return self.name
+# 이함수가 post.object같은 제목을 내용을 제목으로 변환시킨다.
