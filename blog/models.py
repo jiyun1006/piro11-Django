@@ -33,6 +33,10 @@ class Post(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 #     auto_now_add 는 저장될 때 그때의 시각을 기록
 #     auto_now는 저장될 때 마다 기록 갱신
+    class Meta:
+        ordering = ['-id']
+
+
     def __str__(self):
         return self.title
 
