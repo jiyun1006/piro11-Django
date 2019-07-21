@@ -40,8 +40,11 @@ class Post(models.Model):
         ordering = ['-id']
 
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
+    # def __str__(self):
+    #     return [self.author, self.title, self.content, self.status]
+
 
 
 class Comment(models.Model):

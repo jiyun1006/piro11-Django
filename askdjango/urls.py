@@ -24,6 +24,8 @@ urlpatterns = [
     path('dojo/', include('dojo.urls')),
     path('accounts/',include('accounts.urls')),
     path('shop/', include('shop.urls')),
+    # path('practice/', include('practice.urls')),
+
 #     blog, dojo의 urls를 포함시킨다 라는 뜻
 
 ]
