@@ -63,7 +63,8 @@ ROOT_URLCONF = 'askdjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'askdjango','templates'),],
+        # DIRS를 저렇게 설정해서 askdjango부터 차례대로 순회한다.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
