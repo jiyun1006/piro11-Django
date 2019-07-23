@@ -18,8 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.shortcuts import redirect
 
-# def root(request):
-#     return redirect('post_list')
+def root(request):
+    return redirect('post_list')
 
 urlpatterns = [
     path('', lambda r: redirect('blog:post_list') ,name='root'),
